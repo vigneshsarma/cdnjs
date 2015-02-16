@@ -2,36 +2,60 @@
   "name": "forge",
   "filename": "forge.min.js",
   "homepage": "https://github.com/digitalbazaar/forge",
-  "description": "A native implementation of TLS in Javascript and tools to write crypto-based and network-heavy webapps",
+  "description": "JavaScript implementations of network transports, cryptography, ciphers, PKI, message digests, and various utilities",
   "version": "0.6.2",
   "keywords": [
-    "TLS",
-    "HTTP",
-    "SSH",
-    "XHR",
-    "Sockets",
-    "Ciphers",
-    "AES",
-    "DES",
-    "RC2",
-    "RSA",
-    "RSA-KEM",
-    "X.509",
-    "PKCS#5",
-    "PKCS#7",
-    "PKCS#8",
-    "PKCS#10",
-    "PKCS#12",
-    "ASN.1",
-    "SHA1",
-    "SHA256",
-    "SHA384",
-    "SHA512",
-    "MD5",
-    "HMAC"
+    "aes",
+    "asn",
+    "asn.1",
+    "cbc",
+    "crypto",
+    "cryptography",
+    "csr",
+    "des",
+    "gcm",
+    "hmac",
+    "http",
+    "https",
+    "md5",
+    "network",
+    "pkcs",
+    "pki",
+    "prng",
+    "rc2",
+    "rsa",
+    "sha1",
+    "sha256",
+    "sha384",
+    "sha512",
+    "ssh",
+    "tls",
+    "x.509",
+    "x509"
   ],
   "author": {
-    "name": "Dave Longley"
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "http://digitalbazaar.com/"
+  },
+  "contributors": [
+    {
+      "name": "Dave Longley",
+      "email": "dlongley@digitalbazaar.com"
+    },
+    {
+      "name": "Stefan Siegl",
+      "email": "stesie@brokenpipe.de"
+    },
+    {
+      "name": "Christoph Dorn",
+      "email": "christoph@christophdorn.com"
+    }
+  ],
+  "devDependencies": {
+    "almond": "~0.2.6",
+    "jscs": "^1.8.1",
+    "requirejs": "~2.1.8"
   },
   "repositories": [
     {
@@ -46,15 +70,20 @@
       "*.js"
     ]
   },
-  "bugs": "https://github.com/digitalbazaar/forge/issues",
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/forge/issues",
+    "email": "support@digitalbazaar.com"
+  },
   "licenses": [
     {
-      "type": "BSD License",
-      "url": "http://opensource.org/licenses/BSD-3-Clause"
-    },
-    {
-      "type": "GNU General Public License (GPL) Version 2",
-      "url": "http://www.gnu.org/licenses/gpl-2.0.html"
+      "type": "BSD",
+      "url": "https://github.com/digitalbazaar/forge/raw/master/LICENSE"
     }
-  ]
+  ],
+  "scripts": {
+    "bundle": "r.js -o minify.js optimize=none out=js/forge.bundle.js",
+    "minify": "r.js -o minify.js",
+    "jscs": "jscs *.js js/*.js minify.js nodejs/*.js nodejs/test/*.js nodejs/ui/*.js tests/*.js",
+    "jshint": "jshint *.js js/*.js minify.js nodejs/*.js nodejs/test/*.js nodejs/ui/*.js tests/*.js"
+  }
 }
